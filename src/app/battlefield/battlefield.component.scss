@@ -1,0 +1,55 @@
+@import 'variables';
+
+.battlefield {
+   background-color: $secondary-base-color;
+   height: 100vh;
+
+   .arena {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .vs {
+         flex: 1;
+         width: 50px;
+      }
+
+      .player-hand {
+         flex: 4;
+         min-height: 80%;
+         padding: 30px;
+
+         .player-hand-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+         }
+
+         .card {
+            width: 70;
+            background-color: #f4f4f4;
+            min-height: 600px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 8em;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .card-anim {
+            animation: winpoint 2s;
+         }
+      }
+   }
+
+   .winner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      .btn {
+         margin-top: 15px;
+      }
+   }
+}

@@ -1,0 +1,29 @@
+@import 'variables';
+
+.init-form-game {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-base-color;
+    height: 100vh;
+    padding: 20px;
+   
+     .game-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        .form-input {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-error {
+            color: red;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+    }
+}

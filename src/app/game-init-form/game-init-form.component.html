@@ -1,0 +1,38 @@
+<div class="init-form-game">
+    <h1>Bienvenue sur le jeux de bataille</h1>
+    <small>Veuillez saisir les pseudonymes du joueur 1 et 2 pour démarrer la partie</small>
+    <form [formGroup]="gameForm" class="game-form" (ngSubmit)="startGame()">
+        <div class="form-input">
+            <label for="player1" class="form-label">Nom du joueur 1</label>
+            <input id="player1" maxlength="20" class="form-control" formControlName="player1name" placeholder="joueur1">
+            <small>3 caractères minimum, 20 maximum</small>
+            @if (player1name.dirty && player1name.hasError('required')) {
+                <span id="player1-required-error" class="form-error">Le nom du joueur 1 est requis</span>
+            }
+            @if (player1name.dirty && player1name.hasError('minlength')) {
+                <span id="player1-minlength-error" class="form-error">Veuillez saisir 3 caractères au minimum</span>
+            }
+            @if (player1name.dirty && player1name.hasError('maxlength')) {
+                <span id="player1-maxlength-error" lass="form-error">Veullez saisir au maximum 20 caractères</span>
+            }
+        </div>
+        <div class="form-input">
+            <label for="player2" class="form-label">Nom du joueur 2</label>
+            <input id="player2" maxlength="20"  class="form-control" formControlName="player2name" placeholder="joueur2">
+            <small>3 caractères minimum, 20 maximum</small>
+            @if (player2name.dirty && player2name.hasError('required')) {
+                <span id="player2-required-error" class="form-error">Le nom du joueur 2 est requis</span>
+            }
+            @if (player2name.dirty && player2name.hasError('minlength')) {
+                <span id="player2-minlength-error" class="form-error">Veuillez saisir 3 caractères au minimum</span>
+            }
+            @if (player2name.dirty && player2name.hasError('maxlength')) {
+                <span id="player1-maxlength-error" class="form-error">Veullez saisir au maximum 20 caractères</span>
+            }
+        </div>
+
+        <button class="btn btn-success" 
+            [ngClass]="{ 'btn-success': !gameForm.invalid, 'btn-error': gameForm.invalid }" 
+            type="submit" [disabled]="gameForm.invalid || gameConfig">Lancer une partie !</button>
+    </form>
+</div>

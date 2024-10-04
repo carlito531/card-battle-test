@@ -1,0 +1,6 @@
+<div class="home">
+    <div class="content">
+       <app-game-init-form [replay]="replay" (configCompleted)="displayBattlefield($event)"></app-game-init-form>
+       <app-battlefield (replayRequested)="launchNewGame($event)" (updatedCards)="updateCards($event)" [gameConfig]="gameConfig"></app-battlefield>
+    </div>
+</div>

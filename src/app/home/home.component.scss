@@ -1,0 +1,11 @@
+.content {
+    display: flex;
+
+    app-game-init-form {
+        flex: 3;
+    }
+
+    app-battlefield {
+        flex: 8;
+    }
+}
